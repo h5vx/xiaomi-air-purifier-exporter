@@ -1,0 +1,10 @@
+services:
+  xiaomi-air-purifier-exporter:
+    image: h5vx/xiaomi-air-purifier-exporter:latest
+    # build: .  # uncomment to build from source
+    restart: unless-stopped
+    network_mode: host  # needs the host's ARP table and direct LAN access
+    environment:
+      XIAOMI_TOKEN: ${XIAOMI_TOKEN:?set in .env}
+      XIAOMI_MAC: ${XIAOMI_MAC:?set in .env}
+      LISTEN_PORT: ${LISTEN_PORT:-9811}
