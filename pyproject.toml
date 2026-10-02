@@ -30,7 +30,7 @@ tools = ["python-miio"]
 xiaomi-air-purifier-exporter = "xiaomi_air_purifier_exporter.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/h5vx/xiaomi-air-purifier-exporter"
+Homepage = "https://github.com/h5vx/xiaomi_exporter"
 
 [dependency-groups]
 dev = ["pytest>=8"]

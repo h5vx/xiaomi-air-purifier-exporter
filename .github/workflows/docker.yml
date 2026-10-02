@@ -51,7 +51,10 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      # Updating the repo description needs a token with "Read, Write, Delete" scope;
+      # don't fail the release if it only has "Read & Write".
       - uses: peter-evans/dockerhub-description@v4
+        continue-on-error: true
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}

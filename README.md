@@ -1,6 +1,6 @@
 # Xiaomi Air Purifier Exporter
 
-[![Docker](https://github.com/h5vx/xiaomi-air-purifier-exporter/actions/workflows/docker.yml/badge.svg)](https://github.com/h5vx/xiaomi-air-purifier-exporter/actions/workflows/docker.yml)
+[![Docker](https://github.com/h5vx/xiaomi_exporter/actions/workflows/docker.yml/badge.svg)](https://github.com/h5vx/xiaomi_exporter/actions/workflows/docker.yml)
 [![Docker Image Version](https://img.shields.io/docker/v/h5vx/xiaomi-air-purifier-exporter?sort=semver&logo=docker&label=docker%20hub)](https://hub.docker.com/r/h5vx/xiaomi-air-purifier-exporter)
 [![Docker Pulls](https://img.shields.io/docker/pulls/h5vx/xiaomi-air-purifier-exporter?logo=docker)](https://hub.docker.com/r/h5vx/xiaomi-air-purifier-exporter)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -122,7 +122,7 @@ All metrics are gauges, refreshed from the device on every scrape.
 Python 3.10+ is required.
 
 ```sh
-pip install git+https://github.com/h5vx/xiaomi-air-purifier-exporter
+pip install git+https://github.com/h5vx/xiaomi_exporter
 XIAOMI_TOKEN=... XIAOMI_MAC=... xiaomi-air-purifier-exporter
 ```
 
@@ -144,7 +144,9 @@ docker build -t xiaomi-air-purifier-exporter .
 
 To publish a release, push a tag such as `v0.1.0`. GitHub Actions then builds and pushes the
 multi-arch image to Docker Hub. The repository needs the `DOCKERHUB_USERNAME` and
-`DOCKERHUB_TOKEN` secrets.
+`DOCKERHUB_TOKEN` secrets. Give the token the **Read, Write, Delete** scope: with only Read &
+Write the image is still pushed, but the Docker Hub description (synced from this README)
+can't be updated.
 
 ## License
 
